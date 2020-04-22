@@ -58,10 +58,10 @@ namespace AntiDoublons_Dd
 
             }
         }
-
+        
         // Gestion du bouton de recherche de doublons
         // rappel: le SHA1 sera validé par défaut
-        // Révision: 22032020
+        // Révision: 22042020
         //
         private void Btn_RechercheDoublons_Click(object sender, EventArgs e)
         {
@@ -113,6 +113,8 @@ namespace AntiDoublons_Dd
                 if (FormDossierSrc.Err != true)
                 {
                     FormDossierSrc.Show();
+                    if (ChkBox_RapportDonnees.Checked == true)
+                      FormDossierSrc.ExportRapportDonnees(); // la fonction est public définit dans FormRepSrc
                     Tbx_MessageEtat.Text = "Veuillez vérifier les fichiers ...";
                     Tbx_MessageEtat.Refresh();
                 }
@@ -246,6 +248,22 @@ namespace AntiDoublons_Dd
             }
         }
 
-        
+        // Bouton d'annulation
+        // Révision: 22/04/2020
+        // Attention: l'annulation n'est pas réactive 
+        // à cause des taches qui prennent du temps machine.
+        // Cela permet d'obtenir l'activation du bouton "Recherche Doublons"
+        // et de libérer la form Form_RepSrc
+        //
+        private void Btn_Annulation_Click(object sender, EventArgs e)
+        {
+            if (FormDossierSrc != null)
+            {
+                Tbx_MessageEtat.Text = "Annulation utilisateur.";
+                Tbx_MessageEtat.Refresh();
+                FormDossierSrc.Dispose();  // libération mémoire
+                Btn_RechercheDoublons.Enabled = true; // réactive bouton
+            }
+        }
     }
 }

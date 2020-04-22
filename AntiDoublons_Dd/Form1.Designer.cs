@@ -61,6 +61,9 @@
             this.NumUpDown_Sup = new System.Windows.Forms.NumericUpDown();
             this.ChkBox_CocheDoublons = new System.Windows.Forms.CheckBox();
             this.Lbl_PreCocheDoublons = new System.Windows.Forms.Label();
+            this.ChkBox_RapportDonnees = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Btn_Annulation = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDown_Inf)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -143,7 +146,7 @@
             this.Btn_RechercheDoublons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_RechercheDoublons.Location = new System.Drawing.Point(183, 397);
             this.Btn_RechercheDoublons.Name = "Btn_RechercheDoublons";
-            this.Btn_RechercheDoublons.Size = new System.Drawing.Size(513, 32);
+            this.Btn_RechercheDoublons.Size = new System.Drawing.Size(235, 32);
             this.Btn_RechercheDoublons.TabIndex = 10;
             this.Btn_RechercheDoublons.Text = "Recherche doublons";
             this.Btn_RechercheDoublons.UseVisualStyleBackColor = true;
@@ -404,7 +407,7 @@
             // ChkBox_CocheDoublons
             // 
             this.ChkBox_CocheDoublons.AutoSize = true;
-            this.ChkBox_CocheDoublons.Location = new System.Drawing.Point(184, 189);
+            this.ChkBox_CocheDoublons.Location = new System.Drawing.Point(215, 189);
             this.ChkBox_CocheDoublons.Name = "ChkBox_CocheDoublons";
             this.ChkBox_CocheDoublons.Size = new System.Drawing.Size(15, 14);
             this.ChkBox_CocheDoublons.TabIndex = 23;
@@ -420,11 +423,44 @@
             this.Lbl_PreCocheDoublons.TabIndex = 24;
             this.Lbl_PreCocheDoublons.Text = "Pré Cocher Doublons:";
             // 
+            // ChkBox_RapportDonnees
+            // 
+            this.ChkBox_RapportDonnees.AutoSize = true;
+            this.ChkBox_RapportDonnees.Location = new System.Drawing.Point(215, 225);
+            this.ChkBox_RapportDonnees.Name = "ChkBox_RapportDonnees";
+            this.ChkBox_RapportDonnees.Size = new System.Drawing.Size(15, 14);
+            this.ChkBox_RapportDonnees.TabIndex = 25;
+            this.ChkBox_RapportDonnees.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 219);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(188, 20);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Rapport données (.CSV):";
+            // 
+            // Btn_Annulation
+            // 
+            this.Btn_Annulation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Annulation.Location = new System.Drawing.Point(445, 397);
+            this.Btn_Annulation.Name = "Btn_Annulation";
+            this.Btn_Annulation.Size = new System.Drawing.Size(251, 32);
+            this.Btn_Annulation.TabIndex = 27;
+            this.Btn_Annulation.Text = "Annulation";
+            this.Btn_Annulation.UseVisualStyleBackColor = true;
+            this.Btn_Annulation.Click += new System.EventHandler(this.Btn_Annulation_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 631);
+            this.Controls.Add(this.Btn_Annulation);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ChkBox_RapportDonnees);
             this.Controls.Add(this.Lbl_PreCocheDoublons);
             this.Controls.Add(this.ChkBox_CocheDoublons);
             this.Controls.Add(this.groupBox3);
@@ -497,6 +533,9 @@
         private System.Windows.Forms.RadioButton RadButSup_Giga;
         private System.Windows.Forms.CheckBox ChkBox_CocheDoublons;
         private System.Windows.Forms.Label Lbl_PreCocheDoublons;
+        private System.Windows.Forms.CheckBox ChkBox_RapportDonnees;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Btn_Annulation;
     }
 }
 

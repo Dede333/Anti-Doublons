@@ -188,6 +188,28 @@ namespace AntiDoublons_Dd
             }
         }
 
+        public async void ExportRapportDonnees()
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "CSV|*.csv", ValidateNames = true })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    using (StreamWriter sw = new StreamWriter(new FileStream(sfd.FileName, FileMode.Create), Encoding.UTF8))
+                    {
+                        StringBuilder sb = new StringBuilder();
+                        sb.AppendLine("Nom fichier,Taille fichier,Type fichier,Hash,Répertoire");
+                        foreach (ListViewItem MonItem in ListView1.Items)
+                        {
+                            sb.AppendLine(string.Format("{0},{1},{2},{3},{4}", MonItem.SubItems[0].Text, MonItem.SubItems[1].Text, MonItem.SubItems[2].Text, MonItem.SubItems[3].Text, MonItem.SubItems[4].Text));
+                        }
+                        await sw.WriteLineAsync(sb.ToString());
+                        MessageBox.Show("Vos données ont été correctement exportés.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
+
+
         // Gestion du traitement suppression de doublons
         // La colonne 4 contient le chemin du répertoire et la colonne 1 contient le nom du fichier
         // Recopie les doublons dans la corbeille virtuelle (l'opérateur peut ainsi revenir en arrière)
