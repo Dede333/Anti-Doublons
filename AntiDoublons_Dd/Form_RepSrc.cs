@@ -70,7 +70,7 @@ namespace AntiDoublons_Dd
             long Giga = Mega * Mega;
             Color[] clrs = new System.Drawing.Color[]
             {
-                Color.White,
+                Color.Cyan,
                 Color.LightGreen,
                 Color.Orange,
                 Color.Red
